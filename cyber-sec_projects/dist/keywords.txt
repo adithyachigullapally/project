@@ -1,0 +1,6 @@
+keylogger.exe
+spy.exe
+stealer.exe
+logger.exe
+klog.exe
+winlogon.exe
