@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEFINITELY NOT A SCAM 💸💰</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #000000, #001a00, #003300);
+      background-size: 300% 300%;
+      animation: bgMove 5s infinite alternate;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .warning-text {
+      color: #ff0000;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 3px 3px #00ff00, -2px -2px #ffff00;
+      animation: blink 0.5s infinite, shake 0.3s infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0) rotate(0deg); }
+      25% { transform: translateX(-5px) rotate(-2deg); }
+      75% { transform: translateX(5px) rotate(2deg); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .nuke-button {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      cursor: pointer;
+      animation: float 2s infinite;
+      transition: all 0.3s ease;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .nuke-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 100px;
+      background: linear-gradient(to bottom, #222, #111);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 -5px 10px rgba(0,255,0,0.3);
+      border: 3px solid #00ff00;
+    }
+
+    .nuke-dome {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 120px;
+      background: radial-gradient(circle at 50% 100%, #00ff00, #004d00);
+      border-radius: 100px 100px 0 0;
+      box-shadow: 0 -5px 20px rgba(0,255,0,0.8), inset 0 10px 20px rgba(0,255,100,0.4);
+      border: 4px solid #00ff00;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 -5px 20px rgba(0,255,0,0.8), inset 0 10px 20px rgba(0,255,100,0.4); }
+      50% { box-shadow: 0 -5px 40px rgba(0,255,0,1), inset 0 10px 30px rgba(0,255,100,0.6); }
+    }
+
+    .button-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #00ff00;
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      text-align: center;
+      z-index: 10;
+      animation: textBlink 0.7s infinite;
+      width: 150px;
+      line-height: 1.3;
+    }
+
+    @keyframes textBlink {
+      0%, 49% { color: #00ff00; }
+      50%, 100% { color: #ffff00; }
+    }
+
+    .radiation-symbol {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+      opacity: 0.3;
+      animation: spin 3s linear infinite;
+    }
+
+    .scam-text {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #00ff00;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ff00;
+      animation: blink 0.3s infinite;
+      z-index: 100;
+    }
+
+    /* 💸 Floating Money Effect 💸 */
+    .money {
+      position: absolute;
+      font-size: 32px;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      animation: fly 3s linear infinite;
+      opacity: 0.9;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    @keyframes fly {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+
+    .popup, .hacked-popup { display: none; }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #000;
+      padding: 40px;
+      border: 5px solid #00ff00;
+      border-radius: 10px;
+      z-index: 1000;
+      animation: shake 0.2s infinite;
+      box-shadow: 0 0 50px rgba(0,255,0,0.8);
+    }
+
+    .popup-text {
+      color: #00ff00;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 10px #00ff00;
+    }
+
+    .hacked-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #000000;
+      padding: 50px;
+      border: 8px solid #00ff00;
+      border-radius: 20px;
+      z-index: 2000;
+      animation: shake 0.1s infinite, glitch 0.5s infinite;
+      box-shadow: 0 0 100px rgba(0,255,0,0.8);
+    }
+
+    .hacked-text {
+      color: #00ff00;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 3px 3px #ff0000;
+      animation: colorShift 0.3s infinite;
+    }
+
+    .joker {
+      font-size: 100px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: translate(-50%, -50%); }
+      25% { transform: translate(-48%, -52%); }
+      50% { transform: translate(-52%, -50%); }
+      75% { transform: translate(-50%, -48%); }
+    }
+
+    @keyframes colorShift {
+      0% { color: #00ff00; }
+      33% { color: #ff0000; }
+      66% { color: #ffff00; }
+      100% { color: #00ff00; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="warning-text">⚠️ 100% REAL NO FAKE ⚠️</div>
+
+    <div class="nuke-button" id="nukeButton">
+      <div class="nuke-dome">
+        <div class="radiation-symbol">☢️</div>
+        <div class="button-text">WIN ₹1 LAKH NOW!</div>
+      </div>
+      <div class="nuke-base"></div>
+    </div>
+
+    <div class="scam-text">
+      👇 TRY TO CLICK ME 👇<br>
+      NO CREDIT CARD NEEDED!!!<br>
+      (maybe just bank details)<br>
+      🤑💰💸🎰🎲
+    </div>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-text">
+      🚨 CONGRATULATIONS!!! 🚨<br><br>
+      Send us your details<br>
+      TO CLAIM ₹1 LAKH 💸💸💸
+    </div>
+  </div>
+
+  <div class="hacked-popup" id="hackedPopup">
+    <div class="hacked-text">
+      <div class="joker">🤡</div>
+      <br>"BAKKA"<br>
+      YOUR BANK IS HACKED!<br><br>
+      💀💀💀<br>
+      got ur ₹1 LAKH 💸💸💸
+    </div>
+  </div>
+
+  <script>
+    let chaseCount = 0;
+    let canClick = false;
+    const button = document.getElementById('nukeButton');
+    let buttonX = window.innerWidth / 2;
+    let buttonY = window.innerHeight / 2;
+    let isRunningAway = false;
+
+    button.style.left = buttonX + 'px';
+    button.style.top = buttonY + 'px';
+
+    // 💸 Floating green money emojis + ₹1 LAKH text 💸
+    function createMoney() {
+      const money = document.createElement('div');
+      money.classList.add('money');
+      money.textContent = ['💸', '💰', '₹1 LAKH', '🪙', '💵'][Math.floor(Math.random() * 5)];
+      money.style.left = Math.random() * 100 + 'vw';
+      money.style.animationDuration = (2 + Math.random() * 2) + 's';
+      document.body.appendChild(money);
+      setTimeout(() => money.remove(), 3000);
+    }
+    setInterval(createMoney, 400);
+
+    document.addEventListener('mousemove', (e) => {
+      if (canClick || isRunningAway) return;
+
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      const distance = Math.sqrt(
+        Math.pow(mouseX - buttonX, 2) +
+        Math.pow(mouseY - buttonY, 2)
+      );
+
+      if (distance < 200) {
+        isRunningAway = true;
+        chaseCount++;
+
+        if (chaseCount >= 5) {
+          canClick = true;
+          isRunningAway = false;
+          return;
+        }
+
+        const angle = Math.atan2(mouseY - buttonY, mouseX - buttonX);
+        const escapeDistance = 300;
+
+        let newX = buttonX - Math.cos(angle) * escapeDistance;
+        let newY = buttonY - Math.sin(angle) * escapeDistance;
+
+        const margin = 150;
+        newX = Math.max(margin, Math.min(window.innerWidth - margin, newX));
+        newY = Math.max(margin, Math.min(window.innerHeight - margin, newY));
+
+        buttonX = newX;
+        buttonY = newY;
+
+        button.style.left = newX + 'px';
+        button.style.top = newY + 'px';
+        button.style.transform = 'translate(-50%, -50%) scale(0.8)';
+
+        setTimeout(() => {
+          button.style.transform = 'translate(-50%, -50%) scale(1)';
+          isRunningAway = false;
+        }, 500);
+      }
+    });
+
+    button.addEventListener('click', () => {
+      if (canClick) activateScam();
+    });
+
+    function activateScam() {
+      const popup = document.getElementById('popup');
+      const hackedPopup = document.getElementById('hackedPopup');
+      popup.style.display = 'block';
+      document.body.style.animation = 'shake 0.1s infinite';
+
+      setTimeout(() => {
+        popup.style.display = 'none';
+        hackedPopup.style.display = 'block';
+      }, 3000);
+
+      setTimeout(() => {
+        popup.style.display = 'none';
+        hackedPopup.style.display = 'none';
+        document.body.style.animation = '';
+        chaseCount = 0;
+        canClick = false;
+        isRunningAway = false;
+        buttonX = window.innerWidth / 2;
+        buttonY = window.innerHeight / 2;
+        button.style.left = buttonX + 'px';
+        button.style.top = buttonY + 'px';
+      }, 8000);
+    }
+  </script>
+</body>
+</html>
